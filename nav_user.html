@@ -1,0 +1,25 @@
+<?php
+$sql    = "SELECT user_mail, credits, createdAt FROM user_data WHERE ID = " . $_SESSION['state_id'] . ";";
+	$result = $conn_user->query($sql);
+	
+	if ($result->num_rows > 0) {
+		
+		while ($row = $result->fetch_assoc()) {
+			$user_mail = $row["user_mail"];
+			$user_registered = $row["createdAt"];
+			$user_credit = $row["credits"];
+			
+		
+		}
+		
+	} else  {
+		header('Location: login.php?err=2');
+	}
+	?>
+
+<h3><span><?php echo number_format($user_credit, 4, '.', ' '); ?> BTC</span></h3>
+<a href="index.php"><span class="image avatar48"><img src="images/logo.png" alt="" /></span></a>
+<a href="dashboard.php"><p><?php echo $user_mail; ?></p></a><br>
+<hr style="margin-left:80px;">
+<a href="dashboard.php"><p>Dashboard</p></a>
+<a href="logout.php"><p>Ausloggen</p></a> 
