@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost";
-	$username = "combo";
-	$password = "~2wV97sc";
-	$dbname = "combo_db";
+	$username = "";
+	$password = "";
+	$dbname = "";
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
